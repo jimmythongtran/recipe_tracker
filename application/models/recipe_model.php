@@ -12,3 +12,12 @@ function get_first_entry() {
     $result = $query->result();
     return $result;
 }
+
+function get_all_entries() {
+    $query = $this->db->order_by('created_at', 'DESC')->get('recipes');
+    $results = array();
+    foreach ($query->result() as $result) {
+        $results[] = $result;
+    }
+    return $results;
+}
