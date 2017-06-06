@@ -9,7 +9,7 @@ This is the recipe tracker app I am making.
 
 # Development log
 ### June 6, 2017
-Spent much time simply re-setting up my environment. I want to find a one-click development set-up environment solution, but want to get back to the actual build. I spent time customizing my iTerm command line environment, which helps me clarify my workflow, so time well spent.
+Spent much time simply re-setting up my environment. I want to find a one-click development set-up environment solution, but want to get back to the actual build. I spent time customizing my iTerm command line environment, which helps me clarify my workflow, so time well spent. There was a major Github outage at 4:19pm, which messed up my flow.
 
 ### June 2, 2017
 Decided on using README as the place to document the development, more expansive than commit messages.
