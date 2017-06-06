@@ -13,6 +13,8 @@ function get_first_entry() {
     return $result;
 }
 
+# Adding comment for commit check
+
 function get_all_entries() {
     $query = $this->db->order_by('created_at', 'DESC')->get('recipes');
     $results = array();
