@@ -5,21 +5,21 @@ class Recipe_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-}
-
-function get_first_entry() {
-    $query = $this->db->get('recipes', 1, 0);
-    $result = $query->result();
-    return $result;
-}
-
-# Github service outage: https://www.screencast.com/t/6A7HXAfxx5
-
-function get_all_entries() {
-    $query = $this->db->order_by('created_at', 'DESC')->get('recipes');
-    $results = array();
-    foreach ($query->result() as $result) {
-        $results[] = $result;
+    
+    function get_first_entry() {
+        $query = $this->db->get('recipes', 1);
+        $result = $query->result();
+        return $result;
     }
-    return $results;
+    
+    # Github service outage: https://www.screencast.com/t/6A7HXAfxx5
+
+    function get_all_entries() {
+        $query = $this->db->order_by('created_at', 'DESC')->get('recipes');
+        $results = array();
+        foreach ($query->result() as $result) {
+            $results[] = $result;
+        }
+        return $results;
+    }
 }
