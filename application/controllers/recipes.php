@@ -2,7 +2,7 @@
 
 class Recipes extends CI_controller {
 
-    public function __construct(){
+    public function __construct() {
         parent::__construct();
 
         // loads the recipe model to make it available
