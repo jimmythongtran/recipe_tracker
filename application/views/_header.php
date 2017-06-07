@@ -14,8 +14,7 @@
           <?php if (!empty($active_page) && $active_page == 'recipes') {
             echo 'active';
           } ?>
-          "><a href="<?php
-            echo site_url('recipes'); ?>">Recipes</a></li>
+          "><a href="<?php echo site_url('recipes'); ?>">Recipes</a></li>
         <li class="
           <?php if (!empty($active_page) && $active_page == 'about') {
             echo 'active';
