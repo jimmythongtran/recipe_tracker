@@ -15,11 +15,21 @@ class Recipe_model extends CI_Model {
     # Github service outage: https://www.screencast.com/t/6A7HXAfxx5
 
     function get_all_entries() {
-        $query = $this->db->order_by('created_at', 'DESC')->get('recipes');
+        // prep the query
+        $this->db
+            ->select('recipes.*, authors.name AS author_name')
+            ->from('recipes')
+            ->join('authors', 'recipes.author_id = authors.id')
+            ->order_by('recipes.id', 'DESC');
+
+        // run the query
+        $query = $this->db->get();
+
         $results = array();
         foreach ($query->result() as $result) {
             $results[] = $result;
         }
+
         return $results;
     }
 }
