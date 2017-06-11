@@ -2,6 +2,17 @@
 
 class Recipe_model extends CI_Model {
 
+    /**
+     * Recipe fields
+     */
+
+    var $name = '';
+    var $author_id = '';
+    var $image = '';
+    var $servings = '';
+    var $time_prep = '';
+    var $time_cook = '';
+
     function __construct() {
         parent::__construct();
     }
