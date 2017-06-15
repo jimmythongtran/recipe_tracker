@@ -13,6 +13,9 @@ This is the recipe tracker app I am making.
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 14, 2017
+Using CI's form helper to render the form's elements. Altered autoload.php to autoload the form help. Split panes because switching between tabs made it hard to stay focused. Created add.php - added form_inputs, form_dropdowns, astericks for required fields. Added recipe page in custom.css. Added controller action to access new view. Added function to Author_model to get all authors from database.
+
 ### June 11, 2017
 Now, gotta add ability to add data within the app. Added fields to models. Made ingredient_model, author_model and Step_model files. I used a compound Unix command for the first time: `touch author_model.php && echo "<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');" > author_model.php`
 
