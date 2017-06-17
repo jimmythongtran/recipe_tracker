@@ -15,7 +15,7 @@
     <div class="form-group">
         <label>Author<span class="text-danger">*</span></label>
         <?php
-        echo form_dropdown('author_id', array(), '', 'class="form-control"');
+        echo form_dropdown('author_id', $author_options, '', 'class="form-control"');
         ?>
     </div>
 
