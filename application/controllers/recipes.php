@@ -30,7 +30,18 @@ class Recipes extends CI_controller {
 
     public function add()
     {
+        // retrieve all authors
+        $author_entries = $this->Author_model->get_all_entries();
+
+        // generate an array of author options
+        $author_options = array();
+        $author_options[''] = ''; // add a blank initial option
+        foreach ($author_entries as $auth) {
+            $author_options[$auth->id] = $auth->name;
+        }
+        $data['author_options'] = $author_options;
+
         $this->template->set('title', 'Add a Recipe');
-        $this->template->load('template', 'recipes/add');
+        $this->template->load('template', 'recipes/add', $data);
     }
 }
