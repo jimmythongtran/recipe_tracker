@@ -41,6 +41,15 @@ class Recipes extends CI_controller {
         }
         $data['author_options'] = $author_options;
 
+        // generate array for hour options
+        $hour_options = array();
+        $hour_options[''] = ''; // add blank initial option
+        for ($i = 0; $i <=23; $i++) {
+            $time_val = $i < 10 ? '0' . $i : $i;
+            $hour_options[$time_val] = $time_val;
+        }
+        $data['hour_options'] = $hour_options;
+
         $this->template->set('title', 'Add a Recipe');
         $this->template->load('template', 'recipes/add', $data);
     }
