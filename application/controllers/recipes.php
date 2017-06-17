@@ -8,6 +8,9 @@ class Recipes extends CI_controller {
         // loads the recipe model to make it available
         // to all of the controller's actions
         $this->load->model('Recipe_model');
+
+        // load the author model
+        $this->load->model('Author_model');
     }
 
     public function index()
@@ -23,5 +26,11 @@ class Recipes extends CI_controller {
         $this->template->set('active_page', 'recipes');
         $this->template->set('title', 'Recipes');
         $this->template->load('template', 'recipes/index', $data);
+    }
+
+    public function add()
+    {
+        $this->template->set('title', 'Add a Recipe');
+        $this->template->load('template', 'recipes/add');
     }
 }
