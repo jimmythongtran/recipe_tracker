@@ -8,11 +8,16 @@ This is the recipe tracker app I am making.
 * [VIM GIFs](https://vimgifs.com/)
 * [Controller's job](https://stackoverflow.com/questions/2080532/what-is-the-job-of-controller-in-mvc)
 * [Making models for MySQL database](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-creating-a-model.html)
+* [Loading models in MVC](https://stackoverflow.com/questions/7328188/how-to-load-model-into-a-controller-in-mvc)
+* [Timed loops in PHP](https://stackoverflow.com/questions/10699762/timed-loop-in-php)
+* [Parse errors not saving PHP files in VIM](https://stackoverflow.com/questions/6055880/is-it-possible-to-have-vim-prevent-the-saving-of-a-php-file-that-has-a-parse-err)
 
 ## Technical advisor
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 17, 2017
+Getting author entry (Jane Doe) to be listed in form's Author dropdown. Forgot to call `$data` - still not liking backend. Adding prep/cook times in the dropdowns, will fairly assume cook times take under a day, so the max time set will be 23 hours, 59 minutes. Parse errors (not commenting, foreach) didn't allow me to exit VIM's php files.
 ### June 14, 2017
 Using CI's form helper to render the form's elements. Altered autoload.php to autoload the form help. Split panes because switching between tabs made it hard to stay focused. Created add.php - added form_inputs, form_dropdowns, astericks for required fields. Added recipe page in custom.css. Added controller action to access new view. Added function to Author_model to get all authors from database.
 
