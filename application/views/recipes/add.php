@@ -22,11 +22,11 @@
     <div class="form-group form-time clearfix">
         <div><label>Prep Time<span class="text-danger">*</span></label></div>
         <?php
-        echo form_dropdown('time_prep_hours', array(), '', 'class="form-control"');
+        echo form_dropdown('time_prep_hours', $hour_options, '', 'class="form-control"');
         ?>
         <label class="select-label">hr.</label>
         <?php
-        echo form_dropdown('time_prep_minutes', array(), '',
+        echo form_dropdown('time_prep_minutes', $minute_options, '',
             'class="form-control"');
         ?>
         <label class="select-label">min.</label>
@@ -35,11 +35,11 @@
     <div class="form-group form-time clearfix">
         <div><label>Cook Time<span class="text-danger">*</span></label></div>
         <?php
-        echo form_dropdown('time_cook_hours', array(), '', 'class="form-control"');
+        echo form_dropdown('time_cook_hours', $hour_options, '', 'class="form-control"');
         ?>
         <label class="select-label">hr.</label>
         <?php
-        echo form_dropdown('time_cook_minutes', array(), '', 'class="form-control"');
+        echo form_dropdown('time_cook_minutes', $minute_options, '', 'class="form-control"');
         ?>
         <label class="select-label">min.</label>
     </div>
