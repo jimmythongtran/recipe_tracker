@@ -11,11 +11,14 @@ This is the recipe tracker app I am making.
 * [Loading models in MVC](https://stackoverflow.com/questions/7328188/how-to-load-model-into-a-controller-in-mvc)
 * [Timed loops in PHP](https://stackoverflow.com/questions/10699762/timed-loop-in-php)
 * [Parse errors not saving PHP files in VIM](https://stackoverflow.com/questions/6055880/is-it-possible-to-have-vim-prevent-the-saving-of-a-php-file-that-has-a-parse-err)
-
+* [Add blank option to dropdown](https://stackoverflow.com/questions/32331198/how-to-add-a-default-blank-option-to-a-select-input-field-using-laravelcollectiv)
 ## Technical advisor
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 18, 2017
+Semicolons rule the loops in PHP, thanks PHP parse errors. I think variables turn purple in Ultimate VIM when they are valid. Added hours and minute options in view, changed `array()` to aforementioned variables.
+
 ### June 17, 2017
 Getting author entry (Jane Doe) to be listed in form's Author dropdown. Forgot to call `$data` - still not liking backend. Adding prep/cook times in the dropdowns, will fairly assume cook times take under a day, so the max time set will be 23 hours, 59 minutes. Parse errors (not commenting, foreach) didn't allow me to exit VIM's php files.
 ### June 14, 2017
