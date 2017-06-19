@@ -62,4 +62,17 @@ class Recipes extends CI_controller {
         $this->template->set('title', 'Add a Recipe');
         $this->template->load('template', 'recipes/add', $data);
     }
+
+    public function create()
+    {
+        // retrieve ALL values
+        $all_values = $this->input->post();
+        foreach ($all_values as $input_name => $input_val) {
+            echo $input_name . ': '. $input_val . '<br>';
+        }
+
+        // retrieve only the name value
+        $name = $this->input->post('name');
+        echo 'JUST the name: ' . $name;
+    }  
 }
