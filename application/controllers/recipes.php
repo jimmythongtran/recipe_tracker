@@ -65,14 +65,32 @@ class Recipes extends CI_controller {
 
     public function create()
     {
-        // retrieve ALL values
-        $all_values = $this->input->post();
-        foreach ($all_values as $input_name => $input_val) {
-            echo $input_name . ': ' . $input_val . '<br>';
-        }
+        $this->load->library('form_validation');
 
-        // retrieve only the name value
-        $name = $this->input->post('name');
-        echo 'JUST the name: ' . $name;
+        $this->form_validation->set_rules(
+            'name', 'Name', 'required');
+        $this->form_validation->set_rules(
+            'author_id', 'Author', 'required');
+        $this->form_validation->set_rules(
+            'servings', 'Number of servings', 'required');
+        $this->form_validation->set_rules(
+            'time_prep_hours', 'Prep time hours', 'required');
+        $this->form_validation->set_rules(
+            'time_prep_minutes', 'Prep time minutes', 'required');
+        $this->form_validation->set_rules(
+            'time_cook_hours', 'Cook time hours', 'required');
+        $this->form_validation->set_rules(
+            'time_cook_minutes', 'Cook time minutes', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            // validation failed
+            // redisplay add recipe page with errors
+            $this->add();
+        }
+        else {
+            // validation succeeded
+            // add recipe to the database
+            echo 'Add recipe to the database!';
+        }
     }
 }
