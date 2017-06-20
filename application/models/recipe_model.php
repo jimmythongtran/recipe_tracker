@@ -43,4 +43,15 @@ class Recipe_model extends CI_Model {
 
         return $results;
     }
+
+    function insert_entry() {
+        $this->created_at = date('Y-m-d H:i:s');
+        $result = $this->db->insert('recipes', $this);
+        $new_recipe_id = $this->db->insert_id();
+
+        // set the item's new id
+        $this->id = $new_recipe_id;
+
+        return $new_recipe_id;
+    }
 }
