@@ -90,7 +90,23 @@ class Recipes extends CI_controller {
         else {
             // validation succeeded
             // add recipe to the database
-            echo 'Add recipe to the database!';
+            
+            // create a recipe object with the Recipe_model
+            $recipe = new Recipe_model();
+
+            // assign recipe object's field values
+            // based on the submitted form values
+            $recipe->name = $this->input->post('name');
+            $recipe->author_id = $this->input->post('author_id');
+            $recipe->servings = $this->input->post('servings');
+            $recipe->time_prep = $this->post('time_prep_hours')
+                . ':' . $this->input->post('time_prep_minutes') . ':00';
+            $recipe->time_cook = $this->input->post('time_cook_hours')
+                . ':' . $this->input->post('time_cook_minutes') . ':00';
+
+            // add the recipe to the database
+            $recipe->insert_entry();
+
         }
-    }
+    } // end of create
 }
