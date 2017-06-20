@@ -1,5 +1,11 @@
 <h1>Add a recipe</h1>
 
+<?php $this->load->view('_form_errors'); ?>
+
+<?php echo validation_errors(); ?>
+
+<?php echo form_open('recipes/create'); ?>
+
 <form role="form">
 
     <div class="form-group">
@@ -47,3 +53,5 @@
     <button type="submit" class="btn btn-lg btn-primary">Add Recipe</button>
 
 </form>
+
+<?php echo form_close(); ?>
