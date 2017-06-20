@@ -3,6 +3,7 @@
 This is the recipe tracker app I am making.
 
 ## Helpful Links
+* [Code Igniter User Guide](https://www.codeigniter.com/user_guide/)
 * [Markdown formatting](https://support.zendesk.com/hc/en-us/articles/203691016-Formatting-text-with-Markdown$)
 * [Command line power user](http://wesbos.com/command-line-video-tutorials/), [so purty](https://www.screencast.com/t/oAfCwXbCx)
 * [VIM GIFs](https://vimgifs.com/)
@@ -12,10 +13,15 @@ This is the recipe tracker app I am making.
 * [Timed loops in PHP](https://stackoverflow.com/questions/10699762/timed-loop-in-php)
 * [Parse errors not saving PHP files in VIM](https://stackoverflow.com/questions/6055880/is-it-possible-to-have-vim-prevent-the-saving-of-a-php-file-that-has-a-parse-err)
 * [Add blank option to dropdown](https://stackoverflow.com/questions/32331198/how-to-add-a-default-blank-option-to-a-select-input-field-using-laravelcollectiv)
+* [Format of Created at date](http://php.net/manual/en/function.date.php)
+* [Secure Password & Keygen Generator](https://randomkeygen.com/)
+
 ## Technical advisor
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 19/20, 2017
+Multiple desktops is an asset. Establishing create action in recipes controller. Added form validation errors, missed a closing parentheses which drove me nuts. Didn't save recipes.php properly so had to re-code create function, Ultimate VIM even gave me a warning. CI provides form validation methods. Stupid human errors: missing underscores for variables. Added red validation errors. Being nosy led me to upgrade my development environment (thanks Colton and Wallee). It's great for the whole community when someone shares what they've built on Slack. Getting into the habit of constantly saving after any coding is important. Semicolon catches thanks to parse errors. Inserting recipes in recipe_model. Using CI's flashdata to show status message. Naming variables within the context of the app is very necessary. Added encryption key in config.php, but not committing.
 ### June 18, 2017
 Semicolons rule the loops in PHP, thanks PHP parse errors. I think variables turn purple in Ultimate VIM when they are valid. Added hours and minute options in view, changed `array()` to aforementioned variables.
 
