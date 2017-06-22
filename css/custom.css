@@ -45,6 +45,7 @@ body {
     margin-right: 10px;
 }
 
+/* TODO: realign button to right (on left currently) */
 .add-recipe {
     float: right;
     margin-top: 2px;
