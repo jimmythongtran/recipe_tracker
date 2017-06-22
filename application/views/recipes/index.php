@@ -1,7 +1,5 @@
 <h1>
-    <a class="btn btn-success add-recipe" href=<?php
-        echo site_url('recipes/add'); ?>">
-        <i class="glyphicon glyphicon-plus"></i> Recipe</a>
+    <a class="btn btn-success add-recipe" href="<?php echo site_url('recipes/add'); ?>"><i class="glyphicon glyphicon-plus"></i> Recipe</a>
     Recent Recipes
 </h1>
 
