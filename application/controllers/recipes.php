@@ -99,14 +99,24 @@ class Recipes extends CI_controller {
             $recipe->name = $this->input->post('name');
             $recipe->author_id = $this->input->post('author_id');
             $recipe->servings = $this->input->post('servings');
-            $recipe->time_prep = $this->post('time_prep_hours')
-                . ':' . $this->input->post('time_prep_minutes') . ':00';
+            $recipe->time_prep = $this->input->post('time_prep_hours')
+                . ':'
+                . $this->input->post('time_prep_minutes')
+                . ':00';
             $recipe->time_cook = $this->input->post('time_cook_hours')
-                . ':' . $this->input->post('time_cook_minutes') . ':00';
+                . ':'
+                . $this->input->post('time_cook_minutes')
+                . ':00';
 
             // add the recipe to the database
-            $recipe->insert_entry();
+            $new_recipe_id = $recipe->insert_entry();
 
+            // set a "success" message and redirect
+            // to the recipes index page
+            $this->session->set_flashdata('message',
+                '<div class="alert alert-success">'
+                . 'Your recipe was successfully created!</div>');
+            redirect('recipes/index');
         }
     } // end of create
 }
