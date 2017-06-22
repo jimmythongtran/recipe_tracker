@@ -44,3 +44,8 @@ body {
     margin-top: 7px;
     margin-right: 10px;
 }
+
+.add-recipe {
+    float: right;
+    margin-top: 2px;
+}
