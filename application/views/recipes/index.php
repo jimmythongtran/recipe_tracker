@@ -1,4 +1,7 @@
 <h1>Recent Recipes</h1>
+
+<?php echo $this->session->flashdata('message'); ?>
+
 <div class="list-group">
     <?php foreach ($recipes as $recipe) { ?>
         <div class="list-group-item clearfix">
