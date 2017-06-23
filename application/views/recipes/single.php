@@ -19,7 +19,16 @@
 
     <h2>Ingredients</h2>
 
-    <p>Ingredients will go here...</p>
+    <ul id="ingredients" class="list-group">
+    <?php
+    foreach ($ingredients as $single_ingredient) {
+        $data = array(
+            'ingredient' => $single_ingredient
+    );
+    $this->load->view('recipes/_ingredient', $data);
+    }
+    ?>
+    </ul>
 
 </div><!-- /.recipe-ingredients -->
 
@@ -27,6 +36,14 @@
 
     <h2>Steps</h2>
 
-    <p>Steps will go here...</p>
-
+    <ul id="steps" class="list-group">
+    <?php
+    foreach ($steps as $single_step) {
+        $data = array(
+            'step' => $single_step
+        );
+        $this->load->view('recipes/_step', $data);
+    }
+    ?>
+    </ul>
 </div><!-- /.recipe-steps -->
