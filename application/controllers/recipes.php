@@ -64,8 +64,18 @@ class Recipes extends CI_controller {
     } // end of add
 
     public function single($recipe_id) {
+        // retrieve the recipe
+        $recipe = $this->Recipe_model->get_single_entry($recipe_id);
+
+        // if the recipe doesn't exist,
+        // redirect the user to the recipes index page
+        if (empty($recipe)) {
+            redirect('recipes/index');
+        }
+
         $data = array();
         $data['recipe_id'] = $recipe_id;
+        $data['recipe'] = $recipe;
 
         $this->template->set('title', 'Single Recipe');
         $this->template->load('template', 'recipes/single', $data);
