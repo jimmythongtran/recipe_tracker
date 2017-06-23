@@ -57,3 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['welcome-to-ci'] = 'welcome/index';
 /* http://localhost/recipe-tracker/index.php/hello */
 $route['hello'] = 'welcome/hello';
+/**
+ * Recipe routes
+ */
+$route['recipes/(:num)'] = "recipes/single/$1";
