@@ -77,11 +77,23 @@ class Recipes extends CI_controller {
             redirect('recipes/index');
         }
 
+        // get the recipe's ingredients and steps
+        $ingredients = $this->Ingredient_model->get_recipe_entries($recipe_id);
+        $steps = $this->Step_model->get_recipe_entries($recipe_id);
+
+        // add the recipe, its id, ingredients and steps
+        // to the $data array to be passed to our single view
         $data = array();
         $data['recipe_id'] = $recipe_id;
         $data['recipe'] = $recipe;
+        $data['ingredients'] = $ingredients;
+        $data['steps'] = $steps;
 
-        $this->template->set('title', 'Single Recipe');
+        //get latest 10 recipes
+        $latest_recipes = $this->Recipe_model->get_all_entries(10);
+        $data['latest_recipes'] = $latest_recipes;
+
+        $this->template->set('title', $recipe->name);
         $this->template->load('template', 'recipes/single', $data);
     } // end of single
 
