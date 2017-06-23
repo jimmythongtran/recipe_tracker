@@ -21,7 +21,7 @@ class Recipe_model extends CI_Model {
         $query = $this->db->get('recipes', 1);
         $result = $query->result();
         return $result;
-    }
+    } // end get_first_entry
     
     # Github service outage: https://www.screencast.com/t/6A7HXAfxx5
 
@@ -42,7 +42,7 @@ class Recipe_model extends CI_Model {
         }
 
         return $results;
-    }
+    } // end get_all_entries
 
     function insert_entry() {
         $this->created_at = date('Y-m-d H:i:s');
@@ -53,5 +53,19 @@ class Recipe_model extends CI_Model {
         $this->id = $new_recipe_id;
 
         return $new_recipe_id;
-    }
-}
+    } // end insert_entry
+
+    function get_single_entry($id) {
+        $query = $this->db->get_where('recipes', array('id' => $id), 1);
+        $result = $query->result();
+
+        // if a result successfully retrieved,
+        // return only the single recipe object
+        if (!empty($result)) {
+            return $result[0];
+        }
+
+        return $result;
+    } // end get_single_entry
+
+} // end Recipe_model
