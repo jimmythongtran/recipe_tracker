@@ -11,6 +11,10 @@ class Recipes extends CI_controller {
 
         // load the author model
         $this->load->model('Author_model');
+
+        // load the ingredient and step models
+        $this->load->model('Ingredient_model');
+        $this->load->model('Step_model');
     }
 
     public function index()
