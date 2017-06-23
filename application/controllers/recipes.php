@@ -61,7 +61,15 @@ class Recipes extends CI_controller {
 
         $this->template->set('title', 'Add a Recipe');
         $this->template->load('template', 'recipes/add', $data);
-    }
+    } // end of add
+
+    public function single($recipe_id) {
+        $data = array();
+        $data['recipe_id'] = $recipe_id;
+
+        $this->template->set('title', 'Single Recipe');
+        $this->template->load('template', 'recipes/single', $data);
+    } // end of single
 
     public function create()
     {
