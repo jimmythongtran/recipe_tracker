@@ -29,6 +29,8 @@
     }
     ?>
     </ul>
+    
+    <?php $this->load->view('recipes/_add_ingredient'); ?>   
 
 </div><!-- /.recipe-ingredients -->
 
