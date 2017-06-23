@@ -18,4 +18,14 @@ class Ingredient_model extends CI_Model {
         $result = $query->result();
         return $result;
     } // end get_recipe_entries
+
+    function insert_entry() {
+        $result = $this->db->insert('ingredients', $this);
+        $new_ingredient_id = $this->db->insert_id();
+
+        // set the item's new id
+        $this->id = $new_ingredient_id;
+
+        return $new_ingredient_id;
+    }
 } // end Ingredient_model
