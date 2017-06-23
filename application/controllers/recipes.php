@@ -30,7 +30,7 @@ class Recipes extends CI_controller {
         $this->template->set('active_page', 'recipes');
         $this->template->set('title', 'Recipes');
         $this->template->load('template', 'recipes/index', $data);
-    }
+    }//end index
 
     public function add()
     {
@@ -177,7 +177,7 @@ class Recipes extends CI_controller {
                 'errors' => $errors
             );
             echo json_encode($return);
-        }
+        } //end of if
         else {
             //validation succeeds
             // add ingredient to database
@@ -196,8 +196,7 @@ class Recipes extends CI_controller {
             $ingredient->insert_entry();
 
             //get the ingredient's HTML based on partial view
-            $ingredient_html = $this->load->view('recipes/_ingredient',
-                array('ingredient' => $ingredient), true);
+            $ingredient_html = $this->load->view('recipes/_ingredient', array('ingredient' => $ingredient), true);
 
             //return a "success" status and the ingredient's HTML
             //in JSON format
@@ -205,8 +204,7 @@ class Recipes extends CI_controller {
                 'status' => 'success',
                 'ingredient' => $ingredient_html
             );
-
             echo json_encode($return);
         }//end else
     }//end create_ingredient 
-}
+}//end of Recipes
