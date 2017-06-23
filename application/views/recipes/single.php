@@ -1,1 +1,1 @@
-<h1>Single recipe page coming soon...</h1>
+<h1>Single recipe #<?php echo $recipe_id; ?> page coming soon...</h1>
