@@ -153,4 +153,60 @@ class Recipes extends CI_controller {
             redirect('recipes/index');
         }
     } // end of create
+
+    public function create_ingredient()
+    {
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('amount', 'Amount', 'required');
+        $this->form_validation->set_rules('unit', 'Unit', 'required');
+        $this->form_validation->set_rules('name', 'Ingredient name', 'required');
+        $this->form_validation->set_rules('order', 'Order', 'required');
+        $this->form_validation->set_rules('recipe_id', 'Recipe', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            //validation failed
+            
+            // get error messages' HTML
+            $errors = $this->load->view('_form_errors', '', true);
+
+            // return "fail" status and the errors
+            //in jSON format
+            $return = array(
+                'status' => 'fail',
+                'errors' => $errors
+            );
+            echo json_encode($return);
+        }
+        else {
+            //validation succeeds
+            // add ingredient to database
+            // create an ingredient object with Ingredient_model
+            $ingredient = new Ingredient_model();
+
+            //assign ingredient object's field values
+            //based on the form values
+            $ingredient->amount = $this->input->post('amount');
+            $ingredient->unit = $this->input->post('unit');
+            $ingredient->name = $this->input->post('name');
+            $ingredient->order = $this->input->post('order');
+            $ingredient->recipe_id = $this->input->post('recipe_id');
+
+            // add ingredient to the database
+            $ingredient->insert_entry();
+
+            //get the ingredient's HTML based on partial view
+            $ingredient_html = $this->load->view('recipes/_ingredient',
+                array('ingredient' => $ingredient), true);
+
+            //return a "success" status and the ingredient's HTML
+            //in JSON format
+            $return = array(
+                'status' => 'success',
+                'ingredient' => $ingredient_html
+            );
+
+            echo json_encode($return);
+        }//end else
+    }//end create_ingredient 
 }
