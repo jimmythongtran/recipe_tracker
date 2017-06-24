@@ -71,4 +71,37 @@ $(document).ready(function() {
       $addStepForm.toggle();
   });
 
+  $addStepForm.submit(function(e) {
+      e.preventDefault();
+
+      var formURL = $addStepForm.attr('action');
+      var formData = $addStepForm.serialize();
+      var $stepList = $('#steps');
+      var stepOrder = $stepList.find('li').length + 1;
+      formData = formData + "&order=" + stepOrder;
+
+      $.post(
+        formURL,
+        formData,
+        function(json) {
+            var $addStepErrors = $('#add_step_errors');
+            $addStepErrors.empty();
+
+            var status = json["status"];
+            if (status == "success") {
+                var stepHTML = json["step"];
+                $stepList.append(stepHTML);
+
+                $addStepForm.find('input[type="text"]').val('');
+                $addStepForm.hide();
+            }
+            else if (status == "fail") {
+                var errorsHTML = json["errors"];
+                $addStepErrors.html(errorsHTML);
+            }
+        },
+        'json'
+        );
+  });//end submit
+
 }); // end JavaScript
