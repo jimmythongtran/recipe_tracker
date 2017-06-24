@@ -6,7 +6,7 @@
   <body>
     <h1>Recipe Tracker</h1>
     <p>
-      This is the home page for the recipe tracker web app.
+      This is the home page for my recipe tracker web app.
     </p>
   </body>
 </html>
