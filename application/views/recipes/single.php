@@ -23,14 +23,14 @@
     <?php
     foreach ($ingredients as $single_ingredient) {
         $data = array(
-            'ingredient' => $single_ingredient
+          'ingredient' => $single_ingredient
     );
     $this->load->view('recipes/_ingredient', $data);
     }
     ?>
     </ul>
     
-    <?php $this->load->view('recipes/_add_ingredient'); ?>   
+    <?php $this->load->view('recipes/_add_ingredient'); ?>
 
 </div><!-- /.recipe-ingredients -->
 
@@ -48,4 +48,6 @@
     }
     ?>
     </ul>
+
+    <?php $this->load->view('recipes/_add_step'); ?>
 </div><!-- /.recipe-steps -->
