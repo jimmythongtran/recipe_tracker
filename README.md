@@ -2,7 +2,7 @@
 
 This is the recipe tracker app I am making.
 
-## Helpful Links
+## Helpful Resources
 * [Code Igniter User Guide](https://www.codeigniter.com/user_guide/)
 * [Markdown formatting](https://support.zendesk.com/hc/en-us/articles/203691016-Formatting-text-with-Markdown$)
 * [Command line power user](http://wesbos.com/command-line-video-tutorials/), [so purty](https://www.screencast.com/t/oAfCwXbCx)
@@ -16,14 +16,21 @@ This is the recipe tracker app I am making.
 * [Format of Created at date](http://php.net/manual/en/function.date.php)
 * [Secure Password & Keygen Generator](https://randomkeygen.com/)
 * [The dot](https://stackoverflow.com/questions/10969342/parse-error-syntax-error-unexpected-expecting-or)
+* [Redirect if session doesn't exist](https://stackoverflow.com/questions/19403687/redirect-if-session-doent-exist)
+* [Duckett's HTML/CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189/ref=pd_lpo_sbs_14_t_1?_encoding=UTF8&psc=1&refRID=KN2BA88KY0H3R9SJR0CP)
+* [Duckett's JavaScript](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+* [Using get_where - CodeIgniter](https://stackoverflow.com/questions/1577365/codeigniter-get-where)
 
 ## Technical advisor
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 23, 2017
+For some reason, the "add recipe" button is aligned correctly, cool. Add both ingredients and steps, using AJAX. Glad I learned how to do :vsplit. Talk to Electra about deployment if I get everything to work locally. "get_where" basically says: "get all entries from the [ingredients/steps] table where the recipe_id equals $recipe_id." Retrieve recipe's ingredients within single action in Recipes controller. Now implement creation, add section to create small form at bottom of
+ingredients. Adding Javascript, but need to get back to that green button. Ajax allows us to contact server-side code (PHP) without needing to submit form and reload page. Set up create_ingredient in Recipes controller. Adding JavaScript to handle form submission. Added submit actions. I broke the code! I spent the rest of the day fixing the +Add recipe button that brings up the form.
 ### June 22, 2017
 Forgot to add flashdata change yesterday, should consider baking TODOs into code as comments. "The dot is a string concatenation operator." Human error again: missed `input` syntax, PHP was great in showing me on what line the error was. Now I can add recipes on the site and have it show on recent recipes! Adding "Add recipe" button to index page, but on wrong side. Button works now! Considering paying my technical debt later with the button realignment, it works, move on.
-Added first TODO (search later). Pair programmer sure would be nice to catch human errors. Now, going to create a single recipe page to view a recipe's entire content. Start by creating a new view and custom route. Use CI's built-in routing. Create new action in Recipes controller. Adding "end of create" comment at the end of create function () helped me keep track of brackets, just added this to recipe_model too, will add this to other files with PHP moving forward. Tested accessing any single recipe page URL, works. Modifying single.php to check if it contains the ID value. So cool, passing php through HTML tag. Creating deadlines for the home stretch final week before presentation. Now, retrieve the designated recipe's info. Create custom function to spit out readable time.
+Added first TODO (search later). Pair programmer sure would be nice to catch human errors. Now, going to create a single recipe page to view a recipe's entire content. Start by creating a new view and custom route. Use CI's built-in routing. Create new action in Recipes controller. Adding "end of create" comment at the end of create function () helped me keep track of brackets, just added this to recipe_model too, will add this to other files with PHP moving forward. Tested accessing any single recipe page URL, works. Modifying single.php to check if it contains the ID value. So cool, passing php through HTML tag. Creating deadlines for the home stretch final week before presentation. Now, retrieve the designated recipe's info. Create custom function to spit out readable time. Make recipes clickable to single entry view.
 ### June 19/20, 2017
 Multiple desktops is an asset. Establishing create action in recipes controller. Added form validation errors, missed a closing parentheses which drove me nuts. Didn't save recipes.php properly so had to re-code create function, Ultimate VIM even gave me a warning. CI provides form validation methods. Stupid human errors: missing underscores for variables. Added red validation errors. Being nosy led me to upgrade my development environment (thanks Colton and Wallee). It's great for the whole community when someone shares what they've built on Slack. Getting into the habit of constantly saving after any coding is important. Semicolon catches thanks to parse errors. Inserting recipes in recipe_model. Using CI's flashdata to show status message. Naming variables within the context of the app is very necessary. Added encryption key in config.php, but not committing.
 ### June 18, 2017
