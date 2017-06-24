@@ -27,5 +27,5 @@ class Ingredient_model extends CI_Model {
         $this->id = $new_ingredient_id;
 
         return $new_ingredient_id;
-    }
+    } // end insert_entry
 } // end Ingredient_model
