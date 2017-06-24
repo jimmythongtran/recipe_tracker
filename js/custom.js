@@ -58,6 +58,17 @@ $(document).ready(function() {
       'json'
     );
 
+  }); //end add Ingredients form
+
+  /**
+   * Add recipe steps
+   */
+
+  var $addStepForm = $('#add_step_form');
+
+  $('#show_add_step').click(function(e) {
+      e.preventDefault();
+      $addStepForm.toggle();
   });
 
 }); // end JavaScript
