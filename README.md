@@ -25,6 +25,8 @@ This is the recipe tracker app I am making.
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 24, 2017
+Now, we are starting with AJAX, after all-day debugging yesterday. After clearing the browser of browsing data, changes to Javascript show, now works as expected (praise Phil). Now adding the steps. Ending bracket comments is very necessary.
 ### June 23, 2017
 For some reason, the "add recipe" button is aligned correctly, cool. Add both ingredients and steps, using AJAX. Glad I learned how to do :vsplit. Talk to Electra about deployment if I get everything to work locally. "get_where" basically says: "get all entries from the [ingredients/steps] table where the recipe_id equals $recipe_id." Retrieve recipe's ingredients within single action in Recipes controller. Now implement creation, add section to create small form at bottom of
 ingredients. Adding Javascript, but need to get back to that green button. Ajax allows us to contact server-side code (PHP) without needing to submit form and reload page. Set up create_ingredient in Recipes controller. Adding JavaScript to handle form submission. Added submit actions. I broke the code! I spent the rest of the day fixing the +Add recipe button that brings up the form.
