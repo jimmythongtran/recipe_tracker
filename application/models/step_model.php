@@ -16,4 +16,14 @@ class Step_model extends CI_Model {
         $result = $query->result();
         return $result;
     } //end get_recipe_entries
+
+    function insert_entry() {
+        $result = $this->db->insert('steps', $this);
+        $new_step_id = $this->db->insert_id();
+
+        // set the item's new id
+        $this->id = $new_step_id;
+
+        return $new_step_id;
+    }
 } // end Step_model
