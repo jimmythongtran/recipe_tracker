@@ -68,4 +68,8 @@ class Recipe_model extends CI_Model {
         return $result;
     } // end get_single_entry
 
+    function update_entry($id, $update_info) {
+        $this->db->update('recipes', $update_info, array('id' => $id));
+    } // end update_entry
+
 } // end Recipe_model
