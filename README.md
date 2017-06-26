@@ -20,11 +20,14 @@ This is the recipe tracker app I am making.
 * [Duckett's HTML/CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189/ref=pd_lpo_sbs_14_t_1?_encoding=UTF8&psc=1&refRID=KN2BA88KY0H3R9SJR0CP)
 * [Duckett's JavaScript](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 * [Using get_where - CodeIgniter](https://stackoverflow.com/questions/1577365/codeigniter-get-where)
+* [Upload images with PHP](https://www.formget.com/upload-images-using-php-and-jquery-via-form/)
 
 ## Technical advisor
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 25, 2017
+Adding ability to upload an image. Need to add function to Recipe_model allowing us to update fields of existing entry (it's like running a MySQL db query). Forgot you can't add an empty directory to a repo. Add partial view for image.
 ### June 24, 2017
 Now, we are starting with AJAX, after all-day debugging yesterday. After clearing the browser of browsing data, changes to Javascript show, now works as expected (praise Phil). Now adding the steps. Ending bracket comments is very necessary.
 ### June 23, 2017
