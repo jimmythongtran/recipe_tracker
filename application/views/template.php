@@ -12,6 +12,11 @@
 
     <?php $this->load->view('_shim'); ?>
 
+    <script>
+        // create a variable for accessing the app's roote site URL
+        // within other JavaScript code
+        var site_url = '<?php echo site_url(); ?>';
+    </script>
   </head>
   <body>
 
