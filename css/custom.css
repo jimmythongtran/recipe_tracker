@@ -45,10 +45,15 @@ body {
     margin-right: 10px;
 }
 
-/* TODO: realign button to right (on left currently) */
+/* Recipes index page */
 .add-recipe {
     float: right;
     margin-top: 2px;
+}
+
+.recipes-list .list-group-item img {
+    float: right;
+    width: 10%;
 }
 
 /* Add recipe item form */
@@ -59,3 +64,9 @@ body {
     .add-recipe-item-form .col-xs-2 .btn {
         margin-top: 1.8em;
     }
+
+/*recipe image*/
+.recipe-image img {
+    max-width: 100%;
+}
+
