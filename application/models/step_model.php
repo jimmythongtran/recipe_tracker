@@ -27,7 +27,7 @@ class Step_model extends CI_Model {
         return $new_step_id;
     } //end insert_entry
 
-    function delete_entry() {
+    function delete_entry($id) {
         $result = $this->db->delete('steps', array('id' => $id));
         return $result;
     } // end delete_entry
