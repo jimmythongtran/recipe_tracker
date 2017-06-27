@@ -21,11 +21,18 @@ This is the recipe tracker app I am making.
 * [Duckett's JavaScript](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
 * [Using get_where - CodeIgniter](https://stackoverflow.com/questions/1577365/codeigniter-get-where)
 * [Upload images with PHP](https://www.formget.com/upload-images-using-php-and-jquery-via-form/)
+* [Form_multipart](http://php.net/manual/en/features.file-upload.post-method.php)
+* [Private functions](https://stackoverflow.com/questions/4361553/what-is-the-difference-between-public-private-and-protected)
+* [Encapsulation](https://stackoverflow.com/questions/985298/what-is-encapsulation-with-simple-example-in-php)
 
 ## Technical advisor
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 26, 2017
+Just learned Ultimate VIM has an autocomplete, at least for creating functions. Thought my JavaScript wasn't working, had to restart the server, clear browsing data and refresh (praise Phil). Cultivating good habits is one of the most important things I have learned working on this project, make a checklist to get oneself into said habits. Now, create the new upload_image action in Recipes controller that form references (so no 404). I also need to improve my command line skills because I do
+inefficient commands like `cd ..` to navigate back a couple of times. We call a function private because we need to access it only within the controller. Ultimate VIM helped me catch an error thanks to its coloring (the missing closing sign). Having practiced writing for so many years helps in finding those little details. Spent a lot of time fixing my CSS, when it was simply a dot I was missing (to call .recipes-list). A lot of time is always spent looking for one small typo. In
+life, things can slide - in programming, it's generally all, or nothing. Next up, I need to incorporate ability to delete, because, as the saying goes: NTTU ("Never Trust The User"). Can embed PHP code directly within JavaScript.
 ### June 25, 2017
 Adding ability to upload an image. Need to add function to Recipe_model allowing us to update fields of existing entry (it's like running a MySQL db query). Forgot you can't add an empty directory to a repo. Add partial view for image.
 ### June 24, 2017
