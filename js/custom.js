@@ -115,4 +115,21 @@ $(document).ready(function() {
       $uploadImageForm.toggle();
   });
 
+  /**
+   * delete ingredients/steps
+   */
+
+  $('.delete-recipe-item').click(function() {
+      var $recipeItem = $(this).closest('.list-group-item');
+      var itemType = $recipeItem.attr('data-type');
+      var itemId = $recipeItem.attr('data-id');
+
+      // Confirm the deletion before executing it
+      if (confirm(
+          'Are you sure you wish to remove this ' + itemType + '?')) {
+          // Assemble the necessary information,
+          // and make the AJAX request to delete the item...
+      }
+  }); //end delete-recipe-item
+
 }); // end JavaScript
