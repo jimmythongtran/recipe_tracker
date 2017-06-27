@@ -206,5 +206,127 @@ class Recipes extends CI_controller {
             );
             echo json_encode($return);
         }//end else
-    }//end create_ingredient 
+    }//end create_ingredient
+
+    public function create_step()
+    {
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules(
+            'instructions', 'Instructions', 'required');
+        $this->form_validation->set_rules(
+            'order', 'Order', 'required');
+        $this->form_validation->set_rules(
+            'recipe_id', 'Recipe', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            // validation failed
+            
+            // get the error messages' HTML
+            $errors_html = $this->load->view('_form_errors', '', true);
+
+            //return "fail" status and the errors
+            //in json format
+            $return = array(
+                'status' => 'fail',
+                'errors' => $errors_html
+            );
+            echo json_encode($return);
+        }// end if
+        else {
+            //validation succeeded
+            //add step to database
+            
+            // create a step object with the Step_model
+            $step =  new Step_model();
+
+            //assign step object's field values
+            //based on form values
+            $step->instructions = $this->input->post('instructions');
+            $step->order = $this->input->post('order');
+            $step->recipe_id = $this->input->post('recipe_id');
+
+            // add step to the database
+            $step->insert_entry();
+
+            //get the step's HTML based on partial view
+            $step_html = $this->load->view(
+                'recipes/_step', array('step' => $step), true);
+
+            // return "success" status and steps' HTML
+            // in JSON format
+            $return = array(
+                'status' => 'success',
+                'step' => $step_html
+            );
+            echo json_encode($return);
+        } // end else
+    } // end create_step
+
+    public function upload_image()
+    {
+        //the name of our image file input field
+        $image_field_name = 'image';
+
+        // recipe's ID
+        $recipe_id = $this->input->post('recipe_id');
+
+        // attempt to upload the image
+        $upload_info = $this->process_image_upload($image_field_name);
+
+        if ($upload_info['status'] == TRUE) {
+            // upload successful
+            
+            $file_info = $upload_info['file_info'];
+            $file_name = $file_info['file_name'];
+
+            //update the recipe's image value
+            //with the uploaded file's name
+            $recipe_update_values = array('image' => $file_name);
+            $this->Recipe_model->update_entry($recipe_id, $recipe_update_values);
+
+            //redirect back to single recipe page
+            $message_html = '<div class="alert alert-success">'
+                . 'The recipe image has been updated.</div>';
+            $this->session->set_flashdata('message', $message_html);
+            redirect('recipes/' . $recipe_id);
+        }
+        else {
+            //upload failed
+            //Set error message and
+            //redirect back to single recipe page
+            $upload_error = $upload_info['upload_error'];
+            $message_html = '<div class="alert alert-danger">'
+                . $upload_error . '</div>';
+            $this->session->set_flashdata('message', $message_html);
+            redirect('recipes/' . $recipe_id);    
+        }// end of else
+    } // end of upload_image
+
+    /**
+     * private functions
+     */
+    private function process_image_upload($image_field_name) {
+        // handle the validation and upload
+        // of the chosen file, here...
+        // Set path to upload images to and
+        // the allowed image file types
+        $config = array();
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'jpg|png';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload($image_field_name) == FALSE) {
+            //upload failed---return error
+            $upload_error = $this->upload->display_errors();
+            return array('status' => false, 'upload_error' => $upload_error);
+        }
+        else {
+            // upload succeeded---return file info.
+            $file_info = $this->upload->data();
+            return array('status' => true, 'file_info' => $file_info);
+        }// end of else
+    } // end process_image_upload
+
 }//end of Recipes
