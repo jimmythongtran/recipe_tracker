@@ -116,20 +116,42 @@ $(document).ready(function() {
   });
 
   /**
-   * delete ingredients/steps
+   * Delete ingredients / steps
    */
 
   $('.delete-recipe-item').click(function() {
-      var $recipeItem = $(this).closest('.list-group-item');
-      var itemType = $recipeItem.attr('data-type');
-      var itemId = $recipeItem.attr('data-id');
+    var $recipeItem = $(this).closest('.list-group-item');
+    var itemType = $recipeItem.attr('data-type');
+    var itemId = $recipeItem.attr('data-id');
 
-      // Confirm the deletion before executing it
-      if (confirm(
-          'Are you sure you wish to remove this ' + itemType + '?')) {
-          // Assemble the necessary information,
-          // and make the AJAX request to delete the item...
-      }
-  }); //end delete-recipe-item
+    // *Confirm* the deletion before executing it
+    if (confirm('Are you sure you wish to remove this ' + itemType + '?')) {
+      // The controller action URL, using the site_url variable
+      var controllerActionURL = site_url + '/recipes/delete_item';
+
+      // Assemble the data to submit based on the item type and id
+      var submitData = {
+        type: itemType,
+        id: itemId
+      };
+
+      // Make Ajax call to remove the ingredient/step
+      $.post(
+        controllerActionURL,
+        submitData,
+        function(json) {
+          // If the item was successfully deleted,
+          // fade out, and then remove, the item element
+          var status = json["status"];
+          if (status == "success") {
+            $recipeItem.fadeOut(function() {
+              $recipeItem.remove();
+            });
+          }
+        },
+        'json'
+      );
+    }
+  });
 
 }); // end JavaScript
