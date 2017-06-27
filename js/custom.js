@@ -104,4 +104,15 @@ $(document).ready(function() {
         );
   });//end submit
 
+  /**
+   * upload recipe image
+   */
+
+  var $uploadImageForm = $('#upload_image_form');
+
+  $('#show_upload_image').click(function(e) {
+      e.preventDefault();
+      $uploadImageForm.toggle();
+  });
+
 }); // end JavaScript
