@@ -18,7 +18,7 @@ echo form_open_multipart('recipes/upload_image', $form_attributes);
     <div class="form-group">
         <label>Recipe Image</label>
         <?php echo form_upload('image'); ?>
-        <p class="help-block">Only .jpg and .png files allowed</p>
+        <p class="help-block">Only .jpg and .png files allowed. Current image can be replaced by setting a new image, but cannot delete image once an image has been set.</p>
     </div>
 
     <button type="submit" class="btn btn-success">Upload</button>
