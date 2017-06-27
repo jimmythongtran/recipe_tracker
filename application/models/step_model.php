@@ -31,4 +31,5 @@ class Step_model extends CI_Model {
         $result = $this->db->delete('steps', array('id' => $id));
         return $result;
     } // end delete_entry
+
 } // end Step_model
