@@ -303,6 +303,43 @@ class Recipes extends CI_controller {
         }// end of else
     } // end of upload_image
 
+    public function delete_item() {
+        // get the item's type and id
+        $type = $this->input->post('type');
+        $id = $this->input->post('id');
+
+        //status is a failure until proven otherwise
+        $status = 'fail';
+
+        //make sure an item and id were given,
+        // and if so, delete the item
+        if (!empty($type) && !empty($id)) {
+            //the results of the database operation to
+            // delete the entry is false, until proven to be true
+            $result = false;
+
+            //use the proper model, based on the type of item
+            if ($type == 'ingredient') {
+                $result = $this->Ingredient_model->delete_entry($id);
+            }
+            else if ($type == 'step') {
+                $result = $this->Step_model->delete_entry($id);
+            }
+
+            // if result was true (ie. successfully deleted)
+            // set status to "success"
+            if ($result == true) {
+                $status = 'success';
+            }
+        }
+
+        // return the status in JSON format
+        $return = array(
+            'status' => $status
+        );
+        echo json_encode($return);
+    }//end of delete_item
+
     /**
      * private functions
      */
@@ -328,5 +365,6 @@ class Recipes extends CI_controller {
             return array('status' => true, 'file_info' => $file_info);
         }// end of else
     } // end process_image_upload
+
 
 }//end of Recipes
