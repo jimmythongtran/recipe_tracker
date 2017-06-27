@@ -8,6 +8,9 @@
 <div class="list-group recipes-list">
     <?php foreach ($recipes as $recipe) { ?>
     <a class="list-group-item clearfix" href="<?php echo site_url('recipes/' . $recipe->id); ?>">
+    <?php if (!empty($recipe->image)) { ?>
+        <img src="<?php echo base_url('uploads/' . $recipe->image); ?>">
+    <?php }?>
         <h4 class="list-group-item-heading"><?php echo $recipe->name; ?></h4>
         <p class="list-group-item-text">
             <?php echo $recipe->time_cook; ?><br>
