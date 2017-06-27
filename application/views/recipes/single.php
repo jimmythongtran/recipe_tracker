@@ -1,5 +1,9 @@
 <h1><?php echo $recipe->name; ?></h1>
 
+<?php echo $this->session->flashdata('message'); ?>
+
+<?php $this->load->view('recipes/_image'); ?>
+
 <div class="row recipe-quick-facts">
     <div class="col-md-4">
         <h4>Servings</h4>
