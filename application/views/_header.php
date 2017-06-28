@@ -1,7 +1,7 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Recipe Tracker App</a>
+      <a class="navbar-brand" href="#">Recipe Tracker</a>
     </div>
     <div class="">
       <ul class="nav navbar-nav navbar-right">
