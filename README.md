@@ -4,6 +4,8 @@ This is the recipe tracker app I am making.
 
 ## Helpful Resources
 * [Code Igniter User Guide](https://www.codeigniter.com/user_guide/)
+* [Code Igniter Template](http://jeromejaglale.com/doc/php/codeigniter_template)
+* [The Manga Guide to Databases](https://www.nostarch.com/mg_databases.htm)
 * [Markdown formatting](https://support.zendesk.com/hc/en-us/articles/203691016-Formatting-text-with-Markdown$)
 * [Command line power user](http://wesbos.com/command-line-video-tutorials/), [so purty](https://www.screencast.com/t/oAfCwXbCx)
 * [VIM GIFs](https://vimgifs.com/)
@@ -29,6 +31,12 @@ This is the recipe tracker app I am making.
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 28, 2017
+Stopping development to review my code and make sure I understand it. There are a lot of features I am not implementing: Make ingredients/steps re-orderable, deny user entry of bad data, edit/Update ingredients/steps, delete entire recipe, different authors (other than Jane Doe)/Users sign-in, deploy (put it online), but I want to take a step back and comprehend the build, because that was the main point of this project.
+
+### June 27, 2017
+Separation of concerns, creating different files for different parts of the app, really helped me debug this one. I knew deleting steps wasn't working, while deleting ingredients was working (showing that the Javascript was functionining), so the bug lied somewhere in steps...the Step_model! I didn't pass the `$id` through. Had I not practiced this separation (of concerns), debugging would have been like looking for a needle in a haystack. (Also important is to learn
+how to speak idiomatically). Also, shout out to some productivity workflow tools (BetterSnapTool, Alfred). I added a note to the +Set Image feature about not being able to delete-but being able to replace the image, but it cluttered the single recipe view, so I hid it when you +Set image. UI FTW. Before you set the forest on fire, ask yourself, what, and then where is the problem exactly? Sortable() is an amazing function.
 ### June 26, 2017
 Just learned Ultimate VIM has an autocomplete, at least for creating functions. Thought my JavaScript wasn't working, had to restart the server, clear browsing data and refresh (praise Phil). Cultivating good habits is one of the most important things I have learned working on this project, make a checklist to get oneself into said habits. Now, create the new upload_image action in Recipes controller that form references (so no 404). I also need to improve my command line skills because I do
 inefficient commands like `cd ..` to navigate back a couple of times. We call a function private because we need to access it only within the controller. Ultimate VIM helped me catch an error thanks to its coloring (the missing closing sign). Having practiced writing for so many years helps in finding those little details. Spent a lot of time fixing my CSS, when it was simply a dot I was missing (to call .recipes-list). A lot of time is always spent looking for one small typo. In
