@@ -154,4 +154,12 @@ $(document).ready(function() {
     }
   });
 
+  /**
+   * Reordering ingredients/steps
+   */
+
+  // make the ingredient and step list items sortable
+  $('#ingredients, #steps').sortable({
+  });
+
 }); // end JavaScript
