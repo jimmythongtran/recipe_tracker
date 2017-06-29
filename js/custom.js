@@ -159,7 +159,6 @@ $(document).ready(function() {
    */
 
   // make the ingredient and step list items sortable
-  $('#ingredients, #steps').sortable({
-  });
+  $('#ingredients, #steps').sortable();
 
 }); // end JavaScript
