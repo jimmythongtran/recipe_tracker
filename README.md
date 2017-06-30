@@ -32,6 +32,8 @@ This is the recipe tracker app I am making.
 * [Electra Chong](https://github.com/electrachong)
 
 # Development log
+### June 29, 2017
+I was worried about the professionalism of the presentation for tomorrow as I input all dummy recipe data. I haven't implemented edit options, but realized I could just edit it all in the backend, in the database itself. I'll input two more, and save one simple recipe for the live demo. I realized this as I was walking.
 ### June 28, 2017
 Stopping development to review my code and make sure I understand it. There are a lot of features I am not implementing: Make ingredients/steps re-orderable, deny user entry of bad data, edit/Update ingredients/steps, delete entire recipe, different authors (other than Jane Doe)/Users sign-in, deploy (put it online), but I want to take a step back and comprehend the build, because that was the main point of this project.
 
